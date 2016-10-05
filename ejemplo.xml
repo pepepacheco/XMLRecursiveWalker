@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/xsl" href="show_book.xsl"?>
+<padre id="10">
+	<!-- comentario -->
+	<hijo id="2">
+		<nieto id="1"></nieto>
+	</hijo>
+	<![CDATA[ lo que quiera < < <html></html>]]> 
+	<hijo id="7">
+		<nieto id="3"></nieto>
+		<nieto id="6">
+			<biznieto id="4"></biznieto>
+			<biznieto id="5"></biznieto>
+		</nieto>
+	</hijo>
+	<hijo id="8">
+	
+	</hijo>
+	<hijo id="9">
+	
+	</hijo>
+</padre>
