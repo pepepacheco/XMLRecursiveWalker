@@ -30,33 +30,40 @@ public class RecursiveWalker {
         this.raiz = raiz;
     }
     
-    private String recursiveWalk(Node actual){
-        String resultado="";
+    private String recursiveWalk(Node actual, int ident){
+        String resultado="\n";
+        String identa="";
         
-        if (actual.hasChildNodes()) {
-            for (int i = 0; i < actual.getChildNodes().getLength(); i++) {
-                resultado+=recursiveWalk(actual.getChildNodes().item(i));
-            }
+        for (int i = 0; i < ident; i++) {
+            identa+="##";
         }
-        
-        resultado+="\n TIPO NODO: "+actual.getNodeType()+
-                " NOMBRE NODO:"+actual.getLocalName()+
+        resultado+=identa+"TIPO NODO: "+actual.getNodeType()+
+                " NOMBRE NODO: "+actual.getLocalName()+
                 " VALOR NODO: "+actual.getNodeValue();
         
         if (actual.hasAttributes()) {
-            resultado+="\nATRIBUTOS de "+actual.getNodeName()+":";
+            resultado+="\n"+identa+"ATRIBUTOS de "+actual.getNodeName()+":";
             for (int i = 0; i < actual.getAttributes().getLength(); i++) {                
-                resultado+="\n  atributo:"+actual.getAttributes().item(i).getNodeName();
+                resultado+="  atributo:"+actual.getAttributes().item(i).getNodeName();
                 resultado+="  valor:"+actual.getAttributes().item(i).getNodeValue();
             }
         }
+        
+        
+        
+        if (actual.hasChildNodes()) {
+            for (int i = 0; i < actual.getChildNodes().getLength(); i++) {
+                resultado+=recursiveWalk(actual.getChildNodes().item(i), ident+1);
+            }
+        }
+        
         
         return resultado;
     } 
 
     @Override
     public String toString() {
-        return recursiveWalk(this.raiz);
+        return recursiveWalk(this.raiz,0);
     }
     
     

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<?xml-stylesheet type="text/xsl" href="show_book.xsl"?>
 <padre id="10">
-	<!-- comentario -->
 	<hijo id="2">
 		<nieto id="1"></nieto>
 	</hijo>

@@ -26,7 +26,7 @@ public class XmlParser {
         if (args.length==1){ 
             try {                
                 Document doc = DomUtil.parse(args[0], false);   
-                RecursiveWalker rw = new RecursiveWalker(doc);
+                RecursiveWalker rw = new RecursiveWalker(doc.getDocumentElement());
                 System.out.println(rw.toString());
             } catch (ParserConfigurationException | IOException | SAXException ex) {
                 System.out.println("## ERROR:: "+ex.getLocalizedMessage());
